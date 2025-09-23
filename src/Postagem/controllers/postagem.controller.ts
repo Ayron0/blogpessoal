@@ -18,6 +18,12 @@ export class PostagemController {
     findByid(@Param("id", ParseIntPipe) id: number): Promise<Postagem> {
         return this.postagemService.findByid(id);
     }
+
+    @Get("/titulo/:titulo")
+    @HttpCode(HttpStatus.OK)
+    findByAllTitulo(@Param('titulo') titulo: string): Promise<Postagem[]> {
+        return this.postagemService.findAllByTitulo(titulo);
+    }
 }
 
 // Postagem[] lista
