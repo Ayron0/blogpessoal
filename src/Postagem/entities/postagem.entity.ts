@@ -18,3 +18,7 @@ export class Postagem {
     data: Date // data DATE(6) UPDATE_TIMESTAMP
 
 }
+
+// Entidade:
+// No código = pode ser uma classe 
+// No banco de dados = é uma tabela

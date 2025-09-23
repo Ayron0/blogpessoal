@@ -1,7 +1,7 @@
-import { Injectable } from "@nestjs/common";
+import { Postagem } from './../entities/postagem.entity';
+import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Repository } from "typeorm";
-import { Postagem } from "../entities/postagem.entity";
 
 @Injectable()
 export class PostagemService {
@@ -11,6 +11,20 @@ export class PostagemService {
     ){ }
 
     async findAll(): Promise<Postagem[]> {
-        return await this.postagemRepository.find();
+        return await this.postagemRepository.find(); //find vai buscar todas postagens. Tem mais metodos alem do find().
+    }
+
+    async findByid(id: number): Promise<Postagem> {
+
+        const postagem = await this.postagemRepository.findOne({
+            where: {
+                id
+            }
+        });
+
+        if (!postagem)
+            throw new HttpException('Postagem não encontrada', HttpStatus.NOT_FOUND);
+
+        return postagem;
     }
 }
