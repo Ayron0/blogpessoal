@@ -4,6 +4,7 @@ import { InjectRepository } from "@nestjs/typeorm";
 import { ILike, Repository } from "typeorm";
 import { DeleteResult } from 'typeorm/browser';
 
+
 @Injectable()
 export class PostagemService {
     constructor(
@@ -12,7 +13,12 @@ export class PostagemService {
     ){ }
 
     async findAll(): Promise<Postagem[]> {
-        return await this.postagemRepository.find(); //find vai buscar todas postagens. Tem mais metodos alem do find().
+        return await this.postagemRepository.find({
+            relations:{
+                tema:true
+            }
+        }); //find vai buscar todas postagens. Tem mais metodos alem do find().
+        
     }
 
     async findByid(id: number): Promise<Postagem> {
@@ -20,6 +26,9 @@ export class PostagemService {
         const postagem = await this.postagemRepository.findOne({
             where: {
                 id
+            },
+            relations:{
+                tema:true
             }
         });
 
@@ -33,6 +42,9 @@ export class PostagemService {
         return await this.postagemRepository.find({
             where:{
                 titulo: ILike(`%${titulo}%`)
+            },
+            relations:{
+                tema:true
             }
         })
     }
