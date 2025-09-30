@@ -12,7 +12,7 @@ export class TemaService {
 
     async findAll(): Promise<Tema[]> {
         return await this.temaRepository.find({
-            relations: {
+            relations: { // Relation é o JOIN do banco de dados
                 postagem: true
             }
         });
