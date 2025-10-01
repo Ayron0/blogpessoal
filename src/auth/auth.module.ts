@@ -15,7 +15,7 @@ import { JwtStrategy } from "./strategy/jwt.strategy";
         PassportModule,
         JwtModule.register({
             secret: jwtConstants.secret,
-            signOptions: {expiresIn: "1h"},
+            signOptions: {expiresIn: "2h"}, // Vai levar 2 horas para expirar o token de acesso
         })
     ],
     providers: [Bcrypt, AuthService, LocalStrategy, JwtStrategy],
