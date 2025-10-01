@@ -12,7 +12,7 @@ export class UsuarioService {
         private bcrypt: Bcrypt
     ) { }
 
-    async findByUsuario(usuario: string): Promise<Usuario | null> {// foi trocado undefined por null
+    async findByUsuario(usuario: string): Promise<Usuario | null> {// foi trocado undefined por null. O Nest sujeri solução!!
         return await this.usuarioRepository.findOne({
             where: {
                 usuario: usuario
@@ -66,4 +66,4 @@ export class UsuarioService {
 
     }
 
-}
+}//Por lei os dados do usuário não podem ser apagados. O acesso dele é desativado.

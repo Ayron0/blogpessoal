@@ -12,17 +12,17 @@ export class Usuario {
     @Column({length: 255, nullable: false}) 
     nome: string
 
-    @IsEmail()
+    @IsEmail() // Verifica o padrão de email
     @IsNotEmpty()
     @Column({length: 255, nullable: false })
     usuario: string
 
-    @MinLength(8)
+    @MinLength(8) // força a senha ter no Minimo 8 caracteres
     @IsNotEmpty()
     @Column({length: 255, nullable: false }) 
     senha: string
 
-    @Column({length: 5000 }) 
+    @Column({length: 5000 }) //nullable que dizer não é obrigatorio ter foto
     foto: string
 
     @OneToMany(() => Postagem, (postagem) => postagem.usuario)
