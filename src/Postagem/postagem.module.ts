@@ -1,14 +1,15 @@
-import { Module } from "@nestjs/common";
-import { TypeOrmModule } from "@nestjs/typeorm";
-import { PostagemController } from "./controllers/postagem.controller";
-import { PostagemService } from "./services/postagem.services";
-import { Postagem } from "./entities/postagem.entity";
-import { TemaModule } from "../tema/tema.module";
+/* eslint-disable prettier/prettier */
+import { Module } from '@nestjs/common';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { TemaModule } from '../tema/tema.module';
+import { PostagemController } from './controllers/postagem.controller';
+import { Postagem } from './entities/postagem.entity';
+import { PostagemService } from './services/postagem.services';
 
 @Module({
-    imports: [TypeOrmModule.forFeature([Postagem]), TemaModule],
-    providers: [PostagemService],
-    controllers: [PostagemController],
-    exports: [],
+  imports: [TypeOrmModule.forFeature([Postagem]), TemaModule],
+  providers: [PostagemService],
+  controllers: [PostagemController],
+  exports: [],
 })
 export class PostagemModule {}
