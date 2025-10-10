@@ -10,9 +10,9 @@ async function bootstrap() {
     .setTitle('Blog Pessoal')
     .setDescription('Projeto Blog Pessoal')
     .setContact(
-      'Generation Brasil',
-      'http://www.generationbrasil.online',
-      'generation@email.com',
+      'Ayron Sant Anna',
+      'https://github.com/Ayron0',
+      'ayronpaulo2r@gmail.com',
     )
     .setVersion('1.0')
     .addBearerAuth()

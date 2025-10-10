@@ -22,4 +22,4 @@ import { JwtStrategy } from "./strategy/jwt.strategy";
     controllers: [AuthController],
     exports: [Bcrypt],
 })
-export class AuthModule {};
+export class AuthModule {}; 
