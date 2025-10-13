@@ -1,98 +1,174 @@
+# 📝 Blog Pessoal
+
+### API RESTful desenvolvida com **NestJS**, que implementa o back-end completo de um Blog — incluindo autenticação, criação de postagens, categorização por temas e gerenciamento de usuários.
+
+## 📖 Descrição
+
+O **Blog Pessoal** é uma aplicação **back-end** desenvolvida com o framework **NestJS**, estruturada em **módulos independentes** para garantir **organização, escalabilidade e segurança**.  
+O projeto simula o funcionamento de um blog completo, permitindo o **cadastro, autenticação e gerenciamento de usuários**, além da **criação e classificação de postagens** por temas.
+
+A API foi construída seguindo **boas práticas de desenvolvimento**, utilizando **autenticação JWT**, **validação de dados com Class Validator** e **documentação automática via Swagger**.  
+Pode ser consumida facilmente por ferramentas como **Insomnia**, **Postman** ou por um **front-end próprio**.
+
+---
+## 🧩 Módulos do Projeto
+
+| Módulo | Descrição |
+|--------|------------|
+| **Postagem** | Gerencia as postagens (criação, atualização, exclusão e listagem). |
+| **Tema** | Classifica as postagens através do objeto Tema. |
+| **Usuário** | Define o objeto Usuário, utilizado pelo módulo Auth para autenticação e identificação do autor das postagens. |
+| **Auth** | Implementa a segurança da aplicação utilizando autenticação JWT (JSON Web Token). |
+
+> 💡 Este projeto foi desenvolvido com o objetivo de **consolidar o aprendizado de APIs RESTful com NestJS**, aplicando conceitos de **segurança, modularização e integração com banco de dados**.
+
+---
+## 🛠️ Tecnologias Utilizadas
+
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white" alt="NestJS" />
+  <img src="https://img.shields.io/badge/MySQL-00758F?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
+  <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite" />
+  <img src="https://img.shields.io/badge/TypeORM-FF6C37?style=for-the-badge&logo=typeorm&logoColor=white" alt="TypeORM" />
+  <img src="https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white" alt="JWT" />
+  <img src="https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=black" alt="Swagger" />
+  <img src="https://img.shields.io/badge/Class%20Validator-5C2D91?style=for-the-badge&logo=nestjs&logoColor=white" alt="Class Validator" />
+  <img src="https://img.shields.io/badge/SuperTest-FFCA28?style=for-the-badge&logo=jest&logoColor=black" alt="SuperTest" />
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+---
+## ⚙️ Instalação e Configuração
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Project setup
+Clone o repositório
 
 ```bash
-$ npm install
+git clone https://github.com/Ayron0/blogpessoal.git
 ```
-
-## Compile and run the project
-
+Configuração do Projeto
 ```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+npm install
 ```
-
-## Run tests
-
+Dependências principais utilizadas:
 ```bash
-# unit tests
-$ npm run test
+# TypeORM e o MySQL2
+npm install --save @nestjs/typeorm typeorm mysql2
 
-# e2e tests
-$ npm run test:e2e
+# Pacote Validation
+npm install --save class-validator class-transformer
 
-# test coverage
-$ npm run test:cov
+# Pacote Bcrypt
+npm install --save bcrypt
+
+# Pacote Passport-Local
+npm install --save @nestjs/passport passport passport-local
+
+# Pacotes Passport-Jwt e Nestjs-jwt
+npm install --save @nestjs/jwt passport-jwt
+
+# NestJS Swagger
+npm install --save @nestjs/swagger swagger-ui-express
 ```
+---
 
-## Deployment
+## API Endpoints
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+### Módulo Postagem 
+| Método | Endpoint | Descrição |
+|--------|-----------|------------|
+| **GET** | `/postagens` | Lista todas as postagens. |
+| **GET** | `/postagens/:id` | Retorna uma postagem pelo **ID**. |
+| **GET** | `/postagens/titulo/:titulo` | Retorna postagens que contenham o **título** informado. |
+| **POST** | `/postagens` | Cadastra uma nova postagem. |
+| **PUT** | `/postagens` | Atualiza uma postagem existente. |
+| **DELETE** | `/postagens/:id` | Deleta uma postagem pelo **ID**. |
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+### POST /postagens
 
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
+**Response**
+{
+  "titulo": "Postagem 01",
+  "texto": "Texto da Postagem 01",
+  "tema": {
+    "id": 1
+  },
+  "usuario": {
+    "id": 1
+  }
+}
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+### PUT /postagens
 
-## Resources
+**Response**
+{
+  "id": 1,
+  "titulo": "Postagem 01 atualizada",
+  "texto": "Texto da Postagem 01 - atualizado!",
+  "tema": {
+    "id": 1
+  },
+  "usuario": {
+    "id": 1
+  }
+}
 
-Check out a few resources that may come in handy when working with NestJS:
+### Módulo Tema 
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+| Método | Endpoint | Descrição |
+|--------|-----------|------------|
+| **GET** | `/temas` | Lista todos os temas. |
+| **GET** | `/temas/:id` | Retorna um tema pelo **ID**. |
+| **GET** | `/temas/descricao/:descricao` | Retorna temas pela **descrição**. |
+| **POST** | `/temas` | Cadastra um novo tema. |
+| **PUT** | `/temas` | Atualiza um tema existente. |
+| **DELETE** | `/temas/:id` | Deleta um tema pelo **ID**. |
 
-## Support
+### POST /temas
+**Response**
+{
+  "descricao": "Tema 02"
+}
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### PUT /temas
+**Response**
+{
+  "id": 1,
+  "descricao": "Tema 01 - Atualizado"
+}
 
-## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+### Módulo Usuário 
 
-## License
+| Método | Endpoint | Descrição |
+|--------|-----------|------------|
+| **GET** | `/usuarios` | Lista todos os usuários. |
+| **GET** | `/usuarios/:id` | Retorna um usuário pelo **ID**. |
+| **POST** | `/usuarios` | Cadastra um novo usuário. |
+| **PUT** | `/usuarios` | Atualiza um usuário existente. |
+| **POST** | `/usuarios/logar` | Autentica um usuário (login). |
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+### POST /usuarios
+**Response**
+{
+  "nome": "Caio",
+  "usuario": "caio@gmail.com.br",
+  "senha": "admin123",
+  "foto": " "
+}
+
+### PUT /usuarios
+**Response**
+{
+  "id": 1,
+  "nome": "Administrador da Aplicação",
+  "usuario": "admin@email.com.br",
+  "senha": "admin123",
+  "foto": "https://i.imgur.com/JR7kUFU.jpg"
+}
+
+### POST /usuarios/logar
+**Response**
+{
+  "usuario": "caio@gmail.com.br",
+  "senha": "admin123"
+}
