@@ -86,6 +86,7 @@ npm install --save @nestjs/swagger swagger-ui-express
 ### POST /postagens
 
 **Response**
+```bash
 {
   "titulo": "Postagem 01",
   "texto": "Texto da Postagem 01",
@@ -96,10 +97,12 @@ npm install --save @nestjs/swagger swagger-ui-express
     "id": 1
   }
 }
+```
 
 ### PUT /postagens
 
 **Response**
+```bash
 {
   "id": 1,
   "titulo": "Postagem 01 atualizada",
@@ -111,6 +114,7 @@ npm install --save @nestjs/swagger swagger-ui-express
     "id": 1
   }
 }
+```
 
 ### Módulo Tema 
 
@@ -125,17 +129,20 @@ npm install --save @nestjs/swagger swagger-ui-express
 
 ### POST /temas
 **Response**
+```bash
 {
   "descricao": "Tema 02"
 }
+```
 
 ### PUT /temas
 **Response**
+```bash
 {
   "id": 1,
   "descricao": "Tema 01 - Atualizado"
 }
-
+```
 
 ### Módulo Usuário 
 
@@ -149,15 +156,18 @@ npm install --save @nestjs/swagger swagger-ui-express
 
 ### POST /usuarios
 **Response**
+```bash
 {
   "nome": "Caio",
   "usuario": "caio@gmail.com.br",
   "senha": "admin123",
   "foto": " "
 }
+```
 
 ### PUT /usuarios
 **Response**
+```bash
 {
   "id": 1,
   "nome": "Administrador da Aplicação",
@@ -165,10 +175,13 @@ npm install --save @nestjs/swagger swagger-ui-express
   "senha": "admin123",
   "foto": "https://i.imgur.com/JR7kUFU.jpg"
 }
+```
 
 ### POST /usuarios/logar
 **Response**
+```bash
 {
   "usuario": "caio@gmail.com.br",
   "senha": "admin123"
 }
+```
