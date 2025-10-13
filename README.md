@@ -85,7 +85,7 @@ npm install --save @nestjs/swagger swagger-ui-express
 
 ### POST /postagens
 
-**Response**
+**Request**
 ```bash
 {
   "titulo": "Postagem 01",
@@ -101,7 +101,7 @@ npm install --save @nestjs/swagger swagger-ui-express
 
 ### PUT /postagens
 
-**Response**
+**Request**
 ```bash
 {
   "id": 1,
@@ -128,7 +128,7 @@ npm install --save @nestjs/swagger swagger-ui-express
 | **DELETE** | `/temas/:id` | Deleta um tema pelo **ID**. |
 
 ### POST /temas
-**Response**
+**Request**
 ```bash
 {
   "descricao": "Tema 02"
@@ -136,7 +136,7 @@ npm install --save @nestjs/swagger swagger-ui-express
 ```
 
 ### PUT /temas
-**Response**
+**Request**
 ```bash
 {
   "id": 1,
@@ -155,7 +155,7 @@ npm install --save @nestjs/swagger swagger-ui-express
 | **POST** | `/usuarios/logar` | Autentica um usuário (login). |
 
 ### POST /usuarios
-**Response**
+**Request**
 ```bash
 {
   "nome": "Caio",
@@ -166,7 +166,7 @@ npm install --save @nestjs/swagger swagger-ui-express
 ```
 
 ### PUT /usuarios
-**Response**
+**Request**
 ```bash
 {
   "id": 1,
@@ -178,7 +178,7 @@ npm install --save @nestjs/swagger swagger-ui-express
 ```
 
 ### POST /usuarios/logar
-**Response**
+**Request**
 ```bash
 {
   "usuario": "caio@gmail.com.br",
